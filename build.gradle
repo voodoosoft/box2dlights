@@ -1,0 +1,37 @@
+apply plugin: 'java'
+
+group = 'com.badlogicgames.box2dlights'
+version = '1.5-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+ext {
+    gdxVersion = '1.9.11-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/']
+        resources.srcDirs = ['resources/']
+    }
+    test {
+        java.srcDirs = ['tests/']
+    }
+}
+
+dependencies {
+    compile "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+
+}
+
+jar {
+    archiveName = "box2dlights-smooth.jar"
+}
