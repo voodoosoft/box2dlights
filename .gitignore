@@ -7,3 +7,4 @@ target/
 *.class
 *.jar
 *.iml
+/.gradle/
